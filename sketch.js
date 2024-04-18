@@ -2,6 +2,8 @@ let tile;
 let tileSizeW, tileSizeH;
 let tileAmt = 30;
 
+let vertAmt = 15;
+
 let tileColor = 255;
 let bgcolor = 0;
 let blurVal = 10;
@@ -78,14 +80,14 @@ for(let i = 0; i < width/tileSizeW; i++){
 // bottom
 for(let i = 0; i < width/tileSizeW; i++){
   push();
-  translate((i * tileSizeW) + (tileSizeW/2),height-(tileSizeW/2));
+  translate((i * tileSizeW) + (tileSizeW/2),(tileSizeW * (vertAmt+1))-(tileSizeW/2));
   rotate(radians(180 * i));
   image(tile,0,0,tileSizeW,tileSizeW);
   pop();
 }
 
 // left
-for(let i = 0; i < height/tileSizeH; i++){
+for(let i = 0; i < vertAmt; i++){
   push();
   translate((tileSizeH/2),(i * tileSizeH) + (tileSizeH/2));
   rotate(radians(180 * i));
@@ -94,7 +96,7 @@ for(let i = 0; i < height/tileSizeH; i++){
 }
 
 // right
-for(let i = 0; i < height/tileSizeH; i++){
+for(let i = 0; i < vertAmt; i++){
   push();
   translate(width-(tileSizeH/2),(i * tileSizeH) + (tileSizeH/2));
   rotate(radians(180 * i));
