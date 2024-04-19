@@ -130,6 +130,12 @@ for(let i = 0; i < vertAmt; i++){
   // }
 }
 
+function keyPressed() {
+  if(key == 's'){
+    saveCanvas('frame_v2', 'png');
+  }
+}
+
 function drawtile() {
   let pos, moveCount, stepIndex, pattern;
   
