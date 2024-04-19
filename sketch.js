@@ -1,8 +1,11 @@
+let fps = 12;
+let vidLength = 30;
+
 let tile;
 let tileSizeW, tileSizeH;
 let tileAmt = 30;
 
-let vertAmt = 15;
+let vertAmt = 12;
 
 let tileColor = 255;
 let bgcolor = 0;
@@ -32,7 +35,7 @@ let stepSize;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(30);
+  frameRate(fps);
   background(bgcolor);
 
   tile = createGraphics(windowHeight,windowHeight); 
@@ -54,6 +57,10 @@ function windowResized() {
 
 
 function draw() {
+  //   if (frameCount === 1) {
+  //   capturer.start();
+  // }
+
   imageMode(CENTER);
   drawtile();
 
@@ -114,6 +121,13 @@ for(let i = 0; i < vertAmt; i++){
   // fill(tileColor);
   // rect(tileSizeW,tileSizeH,width-(tileSizeW*2),height-(tileSizeH*2));
   // pop();
+
+  //   if (frameCount < fps * vidLength) {
+  //   capturer.capture(canvas);
+  // } else if (frameCount === fps * vidLength) {
+  //   capturer.save();
+  //   capturer.stop();
+  // }
 }
 
 function drawtile() {
